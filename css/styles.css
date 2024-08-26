@@ -10846,3 +10846,17 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
+
+.img-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.mt-6 {
+  margin-top: 5rem;
+}
+
+.list-disc-indent {
+  list-style-type: disc;
+  padding-left: 20px;
+}
