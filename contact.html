@@ -74,10 +74,9 @@
                                     <!-- has successfully submitted-->
                                     <div class="d-none" id="submitSuccessMessage">
                                         <div class="text-center mb-3">
-                                            <div class="fw-bolder">¡El correo ha sido enviado correctamente!</div>
-                                            Agradezco mucho su mensaje. Le responderé a la brevedad posible.
+                                            <div class="fw-bolder">¡La bandeja de correo ha sido abierta para su envio!</div>
+                                            Agradezco mucho el mensaje . Le responderé a la brevedad posible.
                                             <br />
-                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                         </div>
                                     </div>
                                     <!-- Submit error message-->
@@ -86,7 +85,7 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error al mandar correo!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar correo</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit" onclick="sendEmail()">Enviar correo</button></div>
                                 </form>
                             </div>
                         </div>
@@ -123,11 +122,11 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Alejandro Guerrero 2024</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="https://www.linkedin.com/in/alex-guerrero-8b3076234/">LinkedIn</a>
+                        <a class="link-light small" href="https://www.linkedin.com/in/alex-guerrero-8b3076234/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://github.com/Ordna-dev">GitHub</a>
+                        <a class="link-light small" href="https://github.com/Ordna-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="contact.html">Correo electrónico</a>
+                        <a class="link-light small" href= "mailto: ordnajelaorerreug@gmail.com">Correo electrónico</a>
                     </div>
                 </div>
             </div>
@@ -143,3 +142,18 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+
+<script>
+    function sendEmail() {
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        if (subject && message) {
+            const mailtoLink = `mailto:ordnajelaorerreug@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+            window.location.href = mailtoLink;
+        } else {
+            alert("Por favor, completa todos los campos.");
+        }
+    }
+</script>
